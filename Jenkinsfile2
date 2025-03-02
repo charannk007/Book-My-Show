@@ -10,7 +10,7 @@ pipeline {
         SCANNER_HOME = tool 'sonar-scanner'
         DOCKER_IMAGE = 'nkcharan/bms:latest'
         EKS_CLUSTER_NAME = 'ticker-eks-cluster'
-        AWS_REGION = 'us-east-1'
+        AWS_REGION = 'ap-southeast-1'
     }
 
     stages {
@@ -125,7 +125,7 @@ pipeline {
                 body: "Project: ${env.JOB_NAME}<br/>" +
                       "Build Number: ${env.BUILD_NUMBER}<br/>" +
                       "URL: ${env.BUILD_URL}<br/>",
-                to: 'kastrokiran@gmail.com',
+                to: 'charan.nk007@gmail.com',
                 attachmentsPattern: 'trivyfs.txt'
         }
     }
