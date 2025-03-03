@@ -97,13 +97,13 @@ pipeline {
                 script {
                     sh '''
                     // echo "Verifying AWS credentials..."
-                    // aws sts get-caller-identity
+                    aws sts get-caller-identity
 
                     // echo "Configuring kubectl for EKS cluster..."
                     aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
 
                     // echo "Verifying kubeconfig..."
-                    // kubectl config view
+                    kubectl config view
 
                     echo "Deploying application to EKS..."
                     chmod 777 deployment.yml
